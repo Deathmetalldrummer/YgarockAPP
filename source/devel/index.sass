@@ -1,1 +1,49 @@
 @import "./_sass.sass"
+
+
+.wrapper
+  display: flex
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  flex-flow: row wrap
+  align-items: stretch
+  justify-content: stretch
+.wrapper__
+  width: 50%
+  flex-shrink: 1
+  //height: 100%
+.wrapper__header
+  width: 100%
+.wrapper__green
+  border-right: 1px solid black
+.wrapper__red
+
+
+.green
+  display: flex
+  flex-flow: column nowrap
+  max-height: calc(100vh - 70px)
+.green__list
+  flex-grow: 1
+  overflow: auto
+.green__add
+
+
+
+.badge
+  display: none
+.list-group-item:hover .badge
+  display: inline-block
+.list-group-item
+  font-weight: bold
+.navbar
+  height: 70px
+  padding-top: 0
+  padding-bottom: 0
+
+
+.form-inline
+  width: 50%
+  .form-control
+    flex-grow: 1
