@@ -46,7 +46,7 @@ const paths = {
 		dest: build
 	},
 	other: {
-		src: [devel + '**/*.{json}', '!**/_*/**', '!**/_*'],
+		src: [devel + '**/*.json', '!**/_*/**', '!**/_*'],
 		dest: build
 	},
 	watch: {
@@ -55,7 +55,7 @@ const paths = {
 		js: devel + '**/*.js',
 		font: devel + '**/*.{woff,woff2,ttf}',
 		img: devel + '**/*.{png,jpg,svg}',
-		other: devel + '**/*.{json}',
+		other: devel + '**/*.json',
 		build: build + '**/*.{html,css,js}'
 	}
 

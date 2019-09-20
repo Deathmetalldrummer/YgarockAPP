@@ -2,39 +2,17 @@ extends ./_html
 block body
     .wrapper
         .wrapper__header
-            nav.navbar.navbar-dark.bg-dark
-                a(href="#").navbar-brand YgarockAPP
-                form.form-inline
-                    input.form-control.mr-sm-2(type='search' tabindex=1 placeholder='Найди во мне изюминку...' aria-label='Search')
-                    button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+            +_header()
 
-        .wrapper__.wrapper__green.green
-            .green__list
-                ul.list-group.list-group-flush
-                    - var n = 0;
-                    while n < 40
-                        - n++
-                        li.list-group-item.d-flex.justify-content-between.align-items-center.text-success Cras justo odio
-                            span.badge.badge-primary.badge-pill X
+        .wrapper__.wrapper__green.tableList
+            .tableList__list
+                +_table("Green", "success")#green
+            .tableList__add.bg-dark
+                +_add("success")#add_green
 
 
-            .green__add
-                .input-group
-                    input.form-control(type='text' tabindex=2 placeholder="Вставь в меня что-нибудь..." aria-label="Recipient's username" aria-describedby='button-addon2')
-                    .input-group-append
-                        button.btn.btn-outline-secondary(type='button') Добавить
-
-
-        .wrapper__.wrapper__red.green
-            .green__list
-                ul.list-group.list-group-flush
-                    - var n = 0;
-                        while n < 40
-                            - n++
-                            li.list-group-item.d-flex.justify-content-between.align-items-center.text-danger Cras justo odio
-                                span.badge.badge-primary.badge-pill X
-            .green__add
-                .input-group
-                    input.form-control(type='text' tabindex=3 placeholder="Вставь в меня что-нибудь..." aria-label="Recipient's username" aria-describedby='button-addon2')
-                    .input-group-append
-                        button.btn.btn-outline-secondary(type='button') Добавить
+        .wrapper__.wrapper__red.tableList
+            .tableList__list
+                +_table("Red", "danger")#red
+            .tableList__add.bg-dark
+                +_add("danger")#add_red
