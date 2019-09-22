@@ -1,12 +1,14 @@
 mixin _table(text, color)
+    - var trText = (text === 'green') ? 'Пусто' : (text === 'red') ? 'Как в таблице моего рейтинга' : '';
     table.table.table-hover.table-sm.table-striped1&attributes(attributes)
         thead.thead-dark
             tr
                 th(scope='col' class="text-"+color)= text
         tbody
             - var n = 0;
-            while n < 10
+            while n < 1
                 - n++
                 tr
-                    td(class="text-"+color)= text + ' - ' + n
+                    td(class="text-"+color)
+                        span.text= trText
                         span.badge.badge-danger.badge-pill X

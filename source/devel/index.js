@@ -4,14 +4,13 @@ $(function () {
     url: "data.json"
     // context: document.body
   }).done(function(data) {
+    var _storage = localStorage.getItem('ygarock');
+    if (_storage) {
+      data = JSON.parse(_storage);
+    }
     _table(data);
   });
-
-
-$('.navbar-brand').on('click',function (e) {
-  copyToClipboard(JSON.stringify(ygarock))
 });
-  function copyToClipboard(text) {
-    window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
-  }
-});
+function storage() {
+  localStorage.setItem('ygarock', JSON.stringify(ygarock));
+}

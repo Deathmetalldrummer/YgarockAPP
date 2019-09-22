@@ -8133,7 +8133,10 @@ td:hover .badge {
 .badge {
   float: right;
   display: none;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative;
+  z-index: 999;
+  margin-top: 0.3em; }
 
 .form-inline {
   width: 50%; }
@@ -8196,7 +8199,8 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  max-height: calc(100vh - 70px); }
+  max-height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px); }
 
 .tableList__list {
   -webkit-box-flex: 1;
