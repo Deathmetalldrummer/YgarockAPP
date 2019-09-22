@@ -15,8 +15,12 @@ $('#search .form-control').on('keyup',function (e) {
 
 function _action(input) {
   "use strict";
-  var green = ygarock.green.filter(item => input.val() === item);
-  var red = ygarock.red.filter(item => input.val() === item);
+  var green = ygarock.green.filter(function (item){
+    return input.val() === item;
+  });
+  var red = ygarock.red.filter(function (item){
+    return input.val() === item;
+  });
 
   if (greenAction) {
     greenAction = false;
@@ -29,12 +33,29 @@ function _action(input) {
 
   if (green.length) {
     greenAction = true;
-    generateTable("green",green);
+    console.log(green[0]);
+    generateSearch("green",green[0]);
   }
   if (red.length) {
     redAction = true;
-    generateTable("red",red);
+    console.log(red[0]);
+    generateSearch("red",red[0]);
   }
 }
 
+
+function generateSearch(id, key) {
+  var tbody = $('#'+id+' tbody');
+  var tr = tbody.find('tr').first().clone();
+  var badge = tr.find('.badge');
+  var div = $('<div></div>');
+
+  var i = ygarock[id].indexOf(key);
+
+  tr.find('td').text(ygarock[id][i]).append(badge);
+  div.append(tr.clone().attr('data-id',id+i));
+  tbody.html(div.html());
+
+  listenerTable();
+}
 });

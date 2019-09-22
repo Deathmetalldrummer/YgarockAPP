@@ -3,7 +3,7 @@ function _table(data) {
   for (var key in data) {
     generateTable(key, data[key]);
   }
-  listenerTable(ygarock);
+  listenerTable();
 }
 
 function generateTable(id,arr) {
@@ -18,18 +18,20 @@ function generateTable(id,arr) {
   }
 
   tbody.html(div.html());
+  listenerTable();
 }
 
-function listenerTable(ygarock) {
+function listenerTable() {
   $('.badge').on('click', function (e) {
     var target = $(e.target).closest('tr');
     var id = target.closest('.table').attr('id');
     var index = target.data('id');
     index = +index.replace(id, '');
+
     if (ygarock[id]) {
+
       ygarock[id].splice(index,1);
       generateTable(id,ygarock[id]);
-      listenerTable(ygarock);
     }
   });
 }
