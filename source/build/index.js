@@ -85,7 +85,6 @@ function _table(data) {
 function generateTable(id,arr) {
   var tbody = $('#'+id+' tbody');
   var tr = tbody.find('tr').first().clone();
-  console.log(tr);
   var text = tr.find('.text');
   var badge = tr.find('.badge');
   var div = $('<div></div>');
