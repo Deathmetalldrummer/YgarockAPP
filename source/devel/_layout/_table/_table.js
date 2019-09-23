@@ -33,7 +33,6 @@ function listenerTable() {
     index = +index.replace(id, '');
 
     if (ygarock[id] && confirm('Точно удалить ' + targetText.trim() + '?')) {
-
       ygarock[id].splice(index,1);
       generateTable(id,ygarock[id]);
     }

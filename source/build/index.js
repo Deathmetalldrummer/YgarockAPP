@@ -35,13 +35,11 @@ function _action(input) {
 
   if (green.length) {
     greenAction = true;
-    console.log(green[0]);
-    generateSearch("green",green[0]);
+    generateSearch("green",green);
   }
   if (red.length) {
     redAction = true;
-    console.log(red[0]);
-    generateSearch("red",red[0]);
+    generateSearch("red",red);
   }
 }
 
@@ -49,13 +47,17 @@ function _action(input) {
 function generateSearch(id, key) {
   var tbody = $('#'+id+' tbody');
   var tr = tbody.find('tr').first().clone();
+  var text = tr.find('.text');
   var badge = tr.find('.badge');
   var div = $('<div></div>');
 
-  var i = ygarock[id].indexOf(key);
 
-  tr.find('td').text(ygarock[id][i]).append(badge);
-  div.append(tr.clone().attr('data-id',id+i));
+  for (var i = 0,index = -1; i < key.length; i++) {
+    index = ygarock[id].indexOf(key[i], index + 1);
+    tr.find('td').append(text.text(ygarock[id][index]));
+    tr.find('td').append(badge);
+    div.append(tr.clone().attr('data-id',id+index));
+  }
   tbody.html(div.html());
 
   listenerTable();
@@ -109,7 +111,6 @@ function listenerTable() {
     index = +index.replace(id, '');
 
     if (ygarock[id] && confirm('Точно удалить ' + targetText.trim() + '?')) {
-
       ygarock[id].splice(index,1);
       generateTable(id,ygarock[id]);
     }
