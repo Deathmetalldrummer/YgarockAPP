@@ -45,6 +45,7 @@ function _action(input) {
 
 
 function generateSearch(id, key) {
+  //TODO: Сгенерировать пустую таблицу, если поиск в ней не дал результатов
   var tbody = $('#'+id+' tbody');
   var tr = tbody.find('tr').first().clone();
   var text = tr.find('.text');
@@ -147,6 +148,9 @@ $(function () {
       data = JSON.parse(_storage);
     }
     _table(data);
+  }).fail(function () {
+    var mockData = {"green":["Пусто"],"red":["Как в таблице моего рейтинга"]};
+    _table(mockData)
   });
 });
 function storage() {

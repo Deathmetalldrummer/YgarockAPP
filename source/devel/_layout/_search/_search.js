@@ -43,6 +43,7 @@ function _action(input) {
 
 
 function generateSearch(id, key) {
+  //TODO: Сгенерировать пустую таблицу, если поиск в ней не дал результатов
   var tbody = $('#'+id+' tbody');
   var tr = tbody.find('tr').first().clone();
   var text = tr.find('.text');

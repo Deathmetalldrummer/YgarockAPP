@@ -9,6 +9,9 @@ $(function () {
       data = JSON.parse(_storage);
     }
     _table(data);
+  }).fail(function () {
+    var mockData = {"green":["Пусто"],"red":["Как в таблице моего рейтинга"]};
+    _table(mockData)
   });
 });
 function storage() {
