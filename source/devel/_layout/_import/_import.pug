@@ -1,3 +1,14 @@
 mixin _import()
-    button.import.btn.btn-outline-light Импорт
-
+    button.import.btn.btn-outline-light(type='button' data-toggle='modal' data-target='#exampleModal') Импорт
+    #exampleModal.modal.fade.bd-example-modal-xl(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+        .modal-dialog.modal-dialog-scrollable.modal-xl(role='document')
+            .modal-content
+                .modal-header
+                    h5#exampleModalLabel.modal-title Импорт JSON
+                    button.close(type='button' data-dismiss='modal' aria-label='Close')
+                        span(aria-hidden='true') &times;
+                .modal-body
+                    textarea#importTextArea.form-control(placeholder='JSON' rows="10")
+                .modal-footer
+                    button.btn.btn-secondary(type='button' data-dismiss='modal') Закрыть
+                    button.btn.btn-primary(type='button')#saveImport Сохранить

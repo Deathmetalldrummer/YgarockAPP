@@ -11,8 +11,42 @@
     <div class="wrapper">
       <div class="wrapper__header">
           <nav class="navbar navbar-dark bg-dark"><a class="navbar-brand" href="#">YgarockAPP</a>
-              <button class="import btn btn-outline-light">Импорт</button>
-              <button class="export btn btn-outline-light">Экспорт</button>
+              <button class="import btn btn-outline-light" type="button" data-toggle="modal" data-target="#exampleModal">Импорт</button>
+              <div class="modal fade bd-example-modal-xl" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Импорт JSON</h5>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <textarea class="form-control" id="importTextArea" placeholder="JSON" rows="10"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Закрыть</button>
+                      <button class="btn btn-primary" type="button" id="saveImport">Сохранить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--button.export.btn.btn-outline-light Экспорт-->
+              <button class="export btn btn-outline-light" type="button" data-toggle="modal" data-target="#exampleModal2">Экспорт</button>
+              <div class="modal fade bd-example-modal-xl" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel2">Импорт JSON</h5>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <textarea class="form-control" id="importTextArea2" placeholder="JSON" autofocus rows="10"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Закрыть</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <form class="form-inline" id="search">
                 <input class="form-control mr-sm-2" type="search" placeholder="Найди во мне изюминку...">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
@@ -69,6 +103,7 @@
       </div>
     </div>
     <script src="./jq.js"></script>
+    <script src="./bootstrap.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
